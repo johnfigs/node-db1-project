@@ -41,10 +41,17 @@ const deleteById = async id => {
   return removed
 }
 
+const findByName = async name => {
+  return db('accounts')
+    .where('name', name)
+    .first()
+}
+
 module.exports = {
   getAll,
   getById,
   create,
   updateById,
   deleteById,
+  findByName,
 }
